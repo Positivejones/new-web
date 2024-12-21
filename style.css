@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Funnel+Sans:ital,wght@0,300..800;1,300..800&family=Lilita+One&display=swap');
+
+@keyframes colorChange {
+    0% { background-color: rgb(22, 240, 185); }
+    10% { background-color: rgb(124, 239, 157); }
+    20% { background-color: rgb(25, 206, 137); }
+    30% { background-color: rgb(44, 198, 175); }
+    40% { background-color: rgb(123, 188, 234); }
+    50% { background-color: rgb(86, 154, 203); }
+    60% { background-color: rgb(14, 78, 123); }
+    70% { background-color: rgb(6, 75, 88); }
+    80% { background-color: rgb(32, 121, 142); }
+    90% { background-color: rgb(30, 87, 72); }
+    100% { background-color: rgb(6, 71, 118); }
+}
+
+
+
+body {
+    animation: colorChange 10s infinite;
+    background-size: cover;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    font-family: "Lilita One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#cat {
+    position: fixed;
+    top: 10px;
+    left: 95%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 100px;
+}
+
+
+video {
+    border-radius: 5px;
+    left: 50%;
+    width: 500px;
+}
+
+#video1 {
+    width: 420px;
+    height: 315px;
+}
+
+input {
+    border-color: chartreuse;
+    border-radius: 5px;
+    position: relative;
+    bottom: 250px;
+    left: 100px;
+    width: 400px;
+    height: 40px;
+}
+
+.btn1, .btn2 {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 30px;
+    font-style: normal;
+    position: relative;
+    bottom: 150px;
+    right: 350px;
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.me1, .me2 {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 30px;
+    font-style: normal;
+    position: relative;
+    bottom: 10px;
+    top: 100px;
+    right: 0px;
+    left: 0px;
+    width: 120px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #ffffff;
+    background: #5d02ef;
+    cursor: crosshair;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.btn2 {
+    right: 250px;
+}
+
+.btn1:before, .btn2:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.btn1:active, .btn2:active {
+    color: #000;
+}
+
+.btn1:active:after, .btn2:active:after {
+    background: transparent;
+}
+
+.btn1:hover:before, .btn2:hover:before {
+    opacity: 1;
+}
+
+.btn1:after, .btn2:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+@keyframes jump { 
+    0%, 
+    100% { transform: translateY(0); } 
+    50% { transform: translateY(-20px); } 
+}
+.jump { 
+    display: inline-block; 
+    animation: jump 1s infinite; 
+}
+@media (max-width: 768px) { body { font-size: 14px; } video { width: 100%; height: auto; } input, .btn1, .btn2, .me1, .me2{ width: 100%; margin-bottom: 10px; } #cat { width: 50px; height: 50px; } }
+
