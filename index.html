@@ -3,37 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
-
+    
+    <!-- Discord embed meta tags -->
     <meta property="og:title" content="Your Video Title">
-    <meta property="og:description" content="Description of your video">
-    <meta property="og:url" content="img/video1.mp4">
-    <title>Document</title>
+    <meta property="og:description" content="Your video description">
+    <meta property="og:type" content="video.other">
+    
+    <!-- Video meta tags -->
+    <meta property="og:video:url" content="https://yoursite.com/video.mp4">
+    <meta property="og:video:secure_url" content="https://yoursite.com/video.mp4">
+    <meta property="og:video:type" content="video/mp4">
+    <meta property="og:video:width" content="1080">
+    <meta property="og:video:height" content="1920">
+    
+    <!-- Thumbnail with play button -->
+    <meta property="og:image" content="https://yoursite.com/thumbnail.jpg">
+    <meta property="og:image:width" content="1080">
+    <meta property="og:image:height" content="1920">
+    
+    <title>Video Preview</title>
+    <style>
+        .video-preview {
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+            aspect-ratio: 9/16;
+            background: #000;
+        }
+        
+        .video-preview img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .play-button::after {
+            content: '';
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 12px 0 12px 20px;
+            border-color: transparent transparent transparent #ffffff;
+            margin-left: 4px;
+        }
+    </style>
 </head>
 <body>
-  <h4 class="jump">VIDEO</h4>
-   <div class="message" id="hold">
-    <video controls id="video1" width="420">
-        <source src="img/video1.mp4" type="video/mp4">
-        <source src="video1.ogg" type="video/ogg">
-        Your browser does not support HTML video.
-      </video>
-      <input id="me" type="text" placeholder="enter video URL here" >
-      <button class="btn1" onclick="changeVideo()">Click me</button> 
-      <button class="btn2" onclick="recallVideo()">Recall Random Video</button>
-   </div>
-    <div  id="message"></div>
-    <script src="script.js">
-    </script>
-    <img id="cat" src="./img/jojodance.gif" alt="Dancing Cat">
-
-    <audio id="music" src="img/kingvon.mp3"></audio>
-
-    <div >
-      <a href="./clips.html"><button class="me1">Clips</button></a>
-      <button class="me1" onclick="decreaseVolume()">-</button>
-      <button class="me2" onclick="increaseVolume()">+</button>
+    <div class="video-preview">
+        <img src="your-thumbnail.jpg" alt="Video thumbnail">
+        <div class="play-button"></div>
     </div>
 </body>
 </html>
